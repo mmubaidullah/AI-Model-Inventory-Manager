@@ -11,7 +11,7 @@ const AllModels = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://ai-model-inventory-manager-server.vercel.app/models")
+    fetch("https://ai-model-inventory-manager-server-mu.vercel.app/models")
       .then((res) => res.json())
       .then((data) => {
         setModels(data);
@@ -30,7 +30,7 @@ const AllModels = () => {
     const search_text = e.target.search.value;
 
     fetch(
-      `https://ai-model-inventory-manager-server.vercel.app/search?search=${search_text}&framework=${framework}`
+      `https://ai-model-inventory-manager-server-mu.vercel.app/search?search=${search_text}&framework=${framework}`
     )
       .then((res) => res.json())
       .then((data) => {

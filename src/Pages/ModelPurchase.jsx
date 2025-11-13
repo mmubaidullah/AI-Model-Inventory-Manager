@@ -18,7 +18,7 @@ const ModelPurchase = () => {
       try {
         const token = await user.getIdToken();
         const res = await fetch(
-          `https://ai-model-inventory-manager-server.vercel.app/model-purchase-page?email=${user.email}`,
+          `https://ai-model-inventory-manager-server-mu.vercel.app/model-purchase-page?email=${user.email}`,
           {
             headers: { authorization: `Bearer ${token}` },
           }

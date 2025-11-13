@@ -19,7 +19,7 @@ const ModelDetails = () => {
       try {
         setLoading(true);
         const res = await fetch(
-          `https://ai-model-inventory-manager-server.vercel.app/models/${id}`,
+          `https://ai-model-inventory-manager-server-mu.vercel.app/models/${id}`,
           {
             headers: {
               authorization: `Bearer ${user.accessToken}`,
@@ -56,7 +56,7 @@ const ModelDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://ai-model-inventory-manager-server.vercel.app/models/${model._id}`,
+          `https://ai-model-inventory-manager-server-mu.vercel.app/models/${model._id}`,
           {
             method: "DELETE",
             headers: {
@@ -101,7 +101,7 @@ const ModelDetails = () => {
     };
 
     fetch(
-      `https://ai-model-inventory-manager-server.vercel.app/purchased-model/${model._id}`,
+      `https://ai-model-inventory-manager-server-mu.vercel.app/purchased-model/${model._id}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
