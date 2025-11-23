@@ -6,7 +6,7 @@ import Register from "../components/Register";
 import Login from "../components/Login";
 import AllModels from "../Pages/AllModels";
 import PrivateRoute from "./PrivateRoute";
-import ModelDetails from "../Pages/modelDetails";
+import ModelDetails from "../Pages/ModelDetails";
 import UpdateModel from "../Pages/UpdateModel";
 import MyModels from "../Pages/MyModels";
 import ModelPurchase from "../Pages/ModelPurchase";

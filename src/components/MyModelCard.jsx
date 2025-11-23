@@ -20,7 +20,17 @@ const MyModelCard = ({ model }) => {
           {name}
         </h2>
       </div>
+import React from 'react';
 
+const MyModelCard = () => {
+  return (
+    <div>
+      
+    </div>
+  );
+};
+
+export default MyModelCard;
 
       <div className="flex flex-col justify-between flex-1 mt-2">
         <p className="text-gray-600 mb-1">

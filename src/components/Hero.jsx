@@ -18,7 +18,17 @@ const Hero = () => {
               ["#00c3ff", "#00ff9f", "#7a00ff"][i % 3]
             } 0%, transparent 70%)`,
           }}
-        ></div>
+        ></div>import React from 'react';
+        
+        const Hero = () => {
+          return (
+            <div>
+              
+            </div>
+          );
+        };
+        
+        export default Hero;
       ))}
 
       <h1>Talk to Tomorrow’s Technology</h1>

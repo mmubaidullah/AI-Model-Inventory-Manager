@@ -23,7 +23,7 @@ const UpdateModel = () => {
     if (user?.accessToken && id) {
       setLoading(true);
       fetch(
-        `https://ai-model-inventory-manager-server-mu.vercel.app/models/${id}`,
+        `http://localhost:3000/models/${id}`,
         {
           headers: {
             authorization: `Bearer ${user.accessToken}`,
@@ -63,7 +63,7 @@ const UpdateModel = () => {
       image: e.target.image.value,
     };
 
-    fetch(`https://ai-model-inventory-manager-server-mu.vercel.app/models/${id}`, {
+    fetch(`http://localhost:3000/models/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

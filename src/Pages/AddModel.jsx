@@ -25,7 +25,8 @@ const AddModel = () => {
       purchased: 0,
     };
 
-    fetch("https://ai-model-inventory-manager-server-mu.vercel.app//models", {
+    // fetch("https://ai-model-inventory-manager-server-mu.vercel.app/models", {
+    fetch("http://localhost:3000/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

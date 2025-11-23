@@ -11,7 +11,7 @@ const AllModels = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://ai-model-inventory-manager-server-mu.vercel.app/models")
+    fetch("https://https://ai-model-inventory-manager-server-mu.vercel.app/models")
       .then((res) => res.json())
       .then((data) => {
         setModels(data);
@@ -30,7 +30,7 @@ const AllModels = () => {
     const search_text = e.target.search.value;
 
     fetch(
-      `https://ai-model-inventory-manager-server-mu.vercel.app/search?search=${search_text}&framework=${framework}`
+      `http://localhost:3000/search?search=${search_text}&framework=${framework}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -49,12 +49,12 @@ const AllModels = () => {
   }
 
   return (
-    <div>
-      <h1 className="text-center text-gray-700 lg:text-4xl md:text-3xl text-2xl font-bold mt-12  mb-4 leading-relaxed">
+    <div className="mx-4 md:mx-6 lg:mx-10">
+      <h1 className="text-center heading-text-dark-aware lg:text-4xl md:text-3xl text-2xl font-bold mt-12  mb-4 leading-relaxed">
         All Models
       </h1>
 
-      <p className="text-center max-w-2xl mx-auto text-gray-500 mb-12 px-4 leading-relaxed">
+      <p className="text-center max-w-2xl mx-auto text-gray-500 mb-12 leading-relaxed">
         Explore our complete collection of AI models — from creative generators
         to smart assistants. Each model is designed to push the boundaries of
         innovation and help you achieve more with intelligent automation.
@@ -62,7 +62,7 @@ const AllModels = () => {
 
       <form
         onSubmit={handleSearch}
-        className=" mt-5 mx-8 mb-10 flex flex-wrap gap-2 justify-center"
+        className=" mt-5  mb-10 flex flex-wrap gap-2 justify-center"
       >
         {/* -----Search---- */}
         <label className="input rounded-full">
@@ -100,11 +100,11 @@ const AllModels = () => {
           <option value="Scikit-learn">Scikit-learn</option>
         </select>
 
-        <button className="btn btn-secondary rounded-full">Search</button>
+        <button className="btn btn-info rounded-full">Search</button>
       </form>
 
       {/*  Model Cards */}
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 md:gap-5 py-2 mb-10 px-8">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 md:gap-5 py-2 mb-10 ">
         {models.map((model) => (
           <ModelCard key={model._id} model={model}></ModelCard>
         ))}
