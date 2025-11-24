@@ -6,7 +6,7 @@ const MyModelCard = ({ model }) => {
   const { _id, name, framework, useCase, createdBy, image } = model;
 
   return (
-    <div className="border border-gray-200 bg-white rounded-2xl shadow-md mx-6 p-4 flex flex-col justify-between h-full">
+    <div className="rounded-2xl shadow-md p-4 flex flex-col justify-between h-full">
  
       <div className="flex flex-col gap-4 mb-3">
         <div className="flex items-center justify-center">
@@ -20,17 +20,7 @@ const MyModelCard = ({ model }) => {
           {name}
         </h2>
       </div>
-import React from 'react';
 
-const MyModelCard = () => {
-  return (
-    <div>
-      
-    </div>
-  );
-};
-
-export default MyModelCard;
 
       <div className="flex flex-col justify-between flex-1 mt-2">
         <p className="text-gray-600 mb-1">
@@ -51,7 +41,7 @@ export default MyModelCard;
       <div className="mt-auto">
         <Link
           to={`/model-details/${_id}`}
-          className="btn w-full btn-sm text-white bg-gradient-to-r from-[#1CB5E0] to-[#000851] border-none hover:scale-105 transition-transform"
+          className="btn w-full btn-sm text-white bg-gradient-to-r from-[#6A00FF] to-[#9D4EDD] border-none hover:scale-105 transition-transform"
         >
           View Details
         </Link>
