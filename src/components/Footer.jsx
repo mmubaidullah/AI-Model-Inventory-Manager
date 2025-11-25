@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* GitHub */}
           <a
-            href="https://github.com/himel2535/ai-model-inventory-manager-client"
+            href="https://github.com/mmubaidullah/AI-Model-Inventory-Manager"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow us on GitHub"

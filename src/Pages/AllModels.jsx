@@ -11,7 +11,7 @@ const AllModels = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://https://ai-model-inventory-manager-server-mu.vercel.app/models")
+    fetch("http://localhost:3000/models")
       .then((res) => res.json())
       .then((data) => {
         setModels(data);

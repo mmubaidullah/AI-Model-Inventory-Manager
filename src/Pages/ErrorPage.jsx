@@ -6,7 +6,7 @@ import { Link } from "react-router";
 
 const ErrorPage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-[#1CB5E0] to-[#000851] text-white text-center px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-[#6A00FF] to-[#9D4EDD] text-white text-center px-4">
 
 
       <h1 className="text-7xl font-extrabold mb-4">404</h1>

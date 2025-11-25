@@ -51,7 +51,7 @@ const MyModels = () => {
 
       <div className="hidden lg:block shadow-xl rounded-2xl   overflow-hidden">
         <table className="table w-full border-collapse">
-          <thead className="bg-gradient-to-r from-[#1CB5E0] to-[#000851] text-white text-left">
+          <thead className="bg-gradient-to-r from-[#6A00FF] to-[#9D4EDD] text-white text-left">
             <tr>
               <th className="py-3 px-4">No:</th>
               <th className="py-3 px-4">Image</th>
