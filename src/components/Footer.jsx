@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="grid grid-flow-col gap-4">
           {/* X */}
           <a
-            href="YOUR_X_PROFILE_LINK"
+            href="https://x.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow us on X"
@@ -39,7 +39,7 @@ const Footer = () => {
 
           {/* YouTube */}
           <a
-            href="YOUR_YOUTUBE_LINK"
+            href="https://www.youtube.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Watch us on YouTube"
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* Facebook */}
           <a
-            href="YOUR_FACEBOOK_LINK"
+            href="https://facebook.com/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Find us on Facebook"
@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* GitHub */}
           <a
-            href="https://github.com/mmubaidullah/AI-Model-Inventory-Manager"
+            href="https://github.com/mmubaidullah/ai-model-inventory-manager"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow us on GitHub"
