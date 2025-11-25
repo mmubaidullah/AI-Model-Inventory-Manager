@@ -1,127 +1,191 @@
-🧠 AI Model Inventory Manager
-🚀 Live Website
+<h2 align="center">🧠 AI Model Inventory Manager</h2>
 
-🔗 Visit Live Site --  
-
-🔗 Server Repo (Vercel)  ---    
-
-📋 Project Overview
-
-AI Model Inventory Manager is a full-stack web application built using React.js, Express.js, MongoDB, and Firebase Authentication.
-The system allows users to add, view, update, delete, and purchase AI models while maintaining secure authentication and responsive design.
-
-It simulates real-world AI model repositories like Hugging Face, Kaggle, and Model Zoo — helping users understand how AI models are managed, categorized, and utilized.
-
-🎯 Why This Project?
-
-The project bridges web development and AI concepts, enabling beginners to understand:
-
-How AI models are stored and cataloged.
-
-How CRUD operations and authentication work in real-world apps.
-
-Integration between frontend (React), backend (Express + MongoDB), and Firebase for security.
-
-💡 Key Features
-🔐 Authentication
-
-User Registration & Login with Firebase.
-
-Google Sign-In supported.
-
-Password validation (uppercase, lowercase, minimum 6 chars).
-
-Persisted login on page reload for private routes.
-
-⚙️ CRUD Operations
-
-Add, Edit, Delete, and View AI models.
-
-Each model includes name, framework, use case, dataset, description, and image.
-
-Models stored securely in MongoDB.
-
-Only the creator can edit or delete their models.
-
-💾 Data Management
-
-MongoDB Atlas used for storing model data.
-
-RESTful APIs with Express.js for all CRUD routes.
-
-Secure Firebase token verification for restricted actions (optional admin SDK used).
+<div align="center"> <img src="https://i.ibb.co.com/Y78LpG8r/Screen-Shot-2025-11-19-at-2-05-53-PM.png" alt="project screenshot" width="60%" height="50%"/> </div>
 
 
-🧩 Dynamic UI
+<p align="center">A full-stack web application for managing AI model repositories — inspired by platforms like Hugging Face, Kaggle & Model Zoo.</p>
 
-Latest Models Section: Fetch and display the 6 newest models dynamically.
+---
 
-All Models Page: Grid and table view with search & filter (framework-based).
+<h4>🔗 Live Links
+🚀 Live Website</h4>
 
-My Models Page: Displays user-created models.
+@@@@@@@@@
 
-My Purchases Page: Displays models purchased by the logged-in user.
+---
 
-💸 Purchase Functionality
+<h4>
+  🖥️ Server Repository :
+</h4>
 
-Purchase any model → instantly increments purchase count using $inc.
+https://github.com/mmubaidullah/ai-model-inventory-manager-server
 
-Real-time UI update after successful purchase.
+---
+
+<h4>📌 Project Overview :</h4>
+
+AI Model Inventory Manager is a modern full-stack web application built with React.js, Express.js, MongoDB, and Firebase Authentication. The platform allows users to add, edit, and delete their own AI models, explore and purchase models from others, all within a secure, private-route environment.
+
+--Users must be logged in to access private routes such as Add Model, My Models, and Purchased Models.
+
+--Any model added by a user is automatically stored in their My Models page.
+
+--Users can view details of other models and purchase them, which then appear in their Purchased Models page.
+
+--Only the creator of a model can update or delete it, ensuring data integrity and ownership.
+
+--All sensitive actions are secured on both frontend and backend using Firebase Authentication and token verification.
+
+The platform simulates real-world AI model repositories like Hugging Face, Kaggle, and Model Zoo, providing hands-on experience in managing, categorizing, and securing AI models. This project demonstrates full-stack integration, real-time UI updates, and robust security, making it an excellent example for developers learning practical AI model management and secure web application development.
+
+---
+
+<h4>🎯 Key Features :</h4>
+
+🔐 Authentication (Firebase)
+
+Email/Password Login & Register
+Google Sign-in
+Password Validation
+Persistent Login on reload
+Private routes
+
+⚙️ CRUD Operations (MongoDB + Express)
+
+Add, Edit, Delete, View AI Models
+Only model creator can edit/delete their models
+Secure API & token-based actions
+<h4>🧾 Model Data Includes:</h4>
+Model Name
+Framework (TensorFlow / PyTorch / JAX etc.)
+Use Case
+Dataset
+Description
+Image
+
+🛒 Purchase System
+
+Buy any model
+Purchase count increases using $inc
+My Purchases Page
+
+🌓 UI Features
+
+Dark/Light theme toggle
+Latest Models Section (shows newest 6 models)
+Search & Filter (framework wise)
+My Models Page
+404 Page with animation
+Toast notifications
+Responsive for all screen sizes
+
+---
+
+<h4>🧩 Tech Stack
+Frontend</h4>
+
+React.js
+React Router DOM
+Tailwind CSS
+DaisyUI
+Framer Motion
+Firebase
+Backend
+Node.js
+Express.js
+Databas
+MongoDB Atlas
+Hosting
+Firebase Hosting (Client)
+Vercel (Server)
+
+---
 
 
-🌓 Extra Features
+<h4>📦 Dependencies (Client) :</h4>
 
-Dark/Light Theme Toggle (affects the entire site).
+📦 Main Dependencies--
 
-Loading Spinner for data fetching and form submission.
+Package Name
+@tailwindcss/vite
+firebase
+framer-motion
+lottie-react
+react
+react-dom
+react-icons
+react-loader-spinner
+react-router
+react-toastify
+react-tsparticles
+sweetalert2
+tsparticles
 
-Custom 404 Error Page with animation & “Return Home” button.
+🛠️ Dev Dependencies--
+Package Name
+@eslint/js
+@types/react
+@types/react-dom
+@vitejs/plugin-react
+daisyui
+eslint
+eslint-plugin-react-hooks
+eslint-plugin-react-refresh
+globals
+postcss
+tailwindcss
+vite
 
-Fully responsive design (mobile, tablet, desktop).
+---
 
-Toast notifications (no browser alerts used).
+<h4>🏗️ How to Run the Project (Locally) :</h4>
 
+🔧 1. Clone the Repository
+git clone https://github.com/mmubaidullah/AI-Model-Inventory-Manager.git
+cd AI-Model-Inventory-Manager
 
-⚙️ Tech Stack
-Layer	Technologies
-Frontend	React.js, React Router DOM, Tailwind CSS, DaisyUI, Toastify
-Backend	Express.js, Node.js
-Database	MongoDB Atlas
-Authentication	Firebase Authentication + Firebase Admin SDK
-Hosting	Firebase (client) & Vercel (server)
+📦 2. Install Dependencies
+npm install
 
-🧭 Deployment
+🔐 3. Setup Firebase Environment Variables
 
-Frontend: Hosted on Firebase
+Create a .env file in project root:
 
-Backend: Hosted on Vercel
+VITE_API_KEY=your_api_key
+VITE_AUTH_DOMAIN=your_auth_domain
+VITE_PROJECT_ID=your_project_id
+VITE_STORAGE_BUCKET=your_storage_bucket
+VITE_MESSAGING_SENDER_ID=your_sender_id
+VITE_APP_ID=your_app_id
+VITE_SERVER_URL=https://your-vercel-server.vercel.app
 
-MongoDB Atlas: Used as cloud database
-
-Firebase: Used for authentication
-
-
-
-🏁 Final Notes
---> This project fulfills all the mandatory and challenge requirements, including:
-
-✅ CRUD operations
-✅ Firebase authentication
-✅ MongoDB integration
-✅ Private routes
-✅ Purchase counter
-✅ Search & filter
-✅ 404 page
-✅ Loading states
-✅ Responsive UI
-✅ Dark/Light theme toggle
+▶️ 4. Run Development Server :
+npm run dev
 
 
+Project will open at:
+👉 http://localhost:5173/
 
-👨‍💻 Developer
+🚀 How to Run Server (Backend)
+1. Clone the server repo:
+git clone https://github.com/mmubaidullah/ai-model-inventory-manager-server
+cd ai-model-inventory-manager-server
 
-Ubaidullah
-📧 Email: 
+2. Install dependencies:
+npm install
 
-🌐 Portfolio: []
-💼 GitHub: []
+3. Setup .env:
+MONGODB_URI=your_mongodb_connection
+FIREBASE_SERVICE_ACCOUNT=your_firebase_admin_credentials
+
+4. Run server:
+npm run start
+
+---
+
+<h4>👨‍💻 Developer :</h4>
+
+<h5>Ubaidullah</h5>
+📧 Email: ubaid111999@gmail.com
+
+💼 GitHub: https://github.com/mmubaidullah
