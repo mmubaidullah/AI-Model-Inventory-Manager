@@ -1,9 +1,9 @@
 <h2 align="center">🧠 AI Model Inventory Manager</h2>
 
-<div style="display: flex; gap: 10px;">
-  <img src="/src/assets/Screenshot-Priject-1.png" alt="project screenshot" style="width: 50%;">
-  <img src="/src/assets/Screenshot-Priject-2.png" alt="project screenshot" style="width: 50%;">
-</div>
+| Image 1 | Image 2 |
+|--------|---------|
+| <img src="/src/assets/Screenshot-Priject-1.png" width="100%"> | <img src="/src/assets/Screenshot-Priject-2.png" width="100%"> |
+/div>
 
 
 <p align="center">A full-stack web application for managing AI model repositories — inspired by platforms like Hugging Face, Kaggle & Model Zoo.</p>
