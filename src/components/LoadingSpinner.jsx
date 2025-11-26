@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hourglass } from 'react-loader-spinner';
+import { Oval  } from 'react-loader-spinner';
 
 const LoadingSpinner = ({ fullScreen = false }) => {
     
@@ -13,19 +13,15 @@ const LoadingSpinner = ({ fullScreen = false }) => {
         width: '100%',
     };
 
-    const primaryColor = '#1CB5E0'; 
-    const secondaryColor = '#000851'; 
-
     return (
         <div style={spinnerContainerStyle}>
-            <Hourglass
-                visible={true}
-                height="50"
-                width="50"
-                ariaLabel="hourglass-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                colors={[primaryColor,secondaryColor]} 
+            <Oval
+            height={80}
+            width={80}
+            color="#6A00FF"
+            secondaryColor="#9D4EDD"
+            strokeWidth={4}
+            strokeWidthSecondary={4}
             />
         </div>
     );
