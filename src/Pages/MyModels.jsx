@@ -18,7 +18,7 @@ const MyModels = () => {
       try {
         const token = await user.getIdToken();
         const res = await fetch(
-          `http://localhost:3000/my-models?email=${user.email}`,
+          `https://ai-model-inventory-manager-server-1.onrender.com/my-models?email=${user.email}`,
           {
             headers: {
               authorization: `Bearer ${token}`,

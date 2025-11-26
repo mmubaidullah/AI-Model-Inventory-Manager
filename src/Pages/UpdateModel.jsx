@@ -23,7 +23,7 @@ const UpdateModel = () => {
     if (user?.accessToken && id) {
       setLoading(true);
       fetch(
-        `http://localhost:3000/models/${id}`,
+        `https://ai-model-inventory-manager-server-1.onrender.com/models/${id}`,
         {
           headers: {
             authorization: `Bearer ${user.accessToken}`,
@@ -63,7 +63,7 @@ const UpdateModel = () => {
       image: e.target.image.value,
     };
 
-    fetch(`http://localhost:3000/models/${id}`, {
+    fetch(`https://ai-model-inventory-manager-server-1.onrender.com/models/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

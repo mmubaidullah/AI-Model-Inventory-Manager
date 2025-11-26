@@ -1,9 +1,8 @@
 <h2 align="center">🧠 AI Model Inventory Manager</h2>
 
-| Image 1 | Image 2 |
-|--------|---------|
+| Light | Dark |
+|-------|------|
 | <img src="/src/assets/Screenshot-Priject-1.png" width="100%"> | <img src="/src/assets/Screenshot-Priject-2.png" width="100%"> |
-/div>
 
 
 <p align="center">A full-stack web application for managing AI model repositories — inspired by platforms like Hugging Face, Kaggle & Model Zoo.</p>
@@ -13,7 +12,7 @@
 <h4>🔗 Live Links
 🚀 Live Website</h4>
 
-@@@@@@@@@
+https://ai-model-inventory-manager-client.netlify.app/
 
 ---
 
@@ -160,7 +159,7 @@ VITE_PROJECT_ID=your_project_id
 VITE_STORAGE_BUCKET=your_storage_bucket
 VITE_MESSAGING_SENDER_ID=your_sender_id
 VITE_APP_ID=your_app_id
-VITE_SERVER_URL=https://your-vercel-server.vercel.app
+VITE_SERVER_URL=https://your-vercel or render-server api
 
 ▶️ 4. Run Development Server :
 npm run dev

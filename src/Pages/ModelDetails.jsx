@@ -19,7 +19,7 @@ const ModelDetails = () => {
     const fetchModel = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:3000/models/${id}`,
+        const res = await fetch(`https://ai-model-inventory-manager-server-1.onrender.com/models/${id}`,
           {
             headers: {
               authorization: `Bearer ${user.accessToken}`,
@@ -56,7 +56,7 @@ const ModelDetails = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `http://localhost:3000/models/${model._id}`,
+          `https://ai-model-inventory-manager-server-1.onrender.com/models/${model._id}`,
           {
             method: "DELETE",
             headers: {
@@ -101,7 +101,7 @@ const ModelDetails = () => {
     };
 
     fetch(
-      `http://localhost:3000/purchased-model/${model._id}`,
+      `https://ai-model-inventory-manager-server-1.onrender.com/purchased-model/${model._id}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
