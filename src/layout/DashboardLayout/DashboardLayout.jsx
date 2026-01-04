@@ -39,7 +39,7 @@ const DashboardLayout = () => {
   ];
 
   return (
-    <div className="flex h-screen font-sans max-w-7xl mx-auto pt-16 bg-slate-50 dark:bg-gray-900">
+    <div className="flex h-screen font-sans max-w-7xl mx-auto bg-slate-50 dark:bg-gray-900">
       
       {/* Sidebar */}
       <aside

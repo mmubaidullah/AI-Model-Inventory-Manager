@@ -40,7 +40,7 @@ const Banner = () => {
                   Explore Models
                 </Link>
                 <Link
-                  to="/add-model"
+                  to="/dashboard/add-model"
                   className="btn btn-outline border-[#9D4EDD] text-[#9D4EDD] hover:bg-purple-50 px-8 rounded-xl"
                 >
                   Add Model

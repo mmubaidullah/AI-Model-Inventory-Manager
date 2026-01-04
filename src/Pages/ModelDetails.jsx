@@ -54,17 +54,20 @@ const ModelDetails = () => {
       confirmButtonText: "Yes, delete it!",
       cancelButtonText: "Cancel",
       buttonsStyling: false,
+      customClass: {
+        confirmButton:
+          "px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 mr-2",
+        cancelButton:
+          "px-4 py-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400",
+      },
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `${import.meta.env.VITE_SERVER_API_URL}/models/${model._id}`,
-          {
-            method: "DELETE",
-            headers: {
-              authorization: `Bearer ${user.accessToken}`,
-            },
-          }
-        )
+        fetch(`${import.meta.env.VITE_SERVER_API_URL}/models/${model._id}`, {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${user.accessToken}`,
+          },
+        })
           .then((res) => res.json())
           .then(() => {
             toast.success("Successfully deleted this model");
@@ -131,9 +134,15 @@ const ModelDetails = () => {
               <span className="badge badge-primary">{model.framework}</span>
             </div>
 
-            <p><strong>UseCase:</strong> {model.useCase}</p>
-            <p><strong>Dataset:</strong> {model.dataset}</p>
-            <p><strong>Description:</strong> {model.description}</p>
+            <p>
+              <strong>UseCase:</strong> {model.useCase}
+            </p>
+            <p>
+              <strong>Dataset:</strong> {model.dataset}
+            </p>
+            <p>
+              <strong>Description:</strong> {model.description}
+            </p>
             <p>
               <strong>Purchased:</strong>{" "}
               <span className="font-bold text-purple-600">
