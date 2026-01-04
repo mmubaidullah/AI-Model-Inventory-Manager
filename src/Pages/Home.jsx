@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://ai-model-inventory-manager-server-1.onrender.com/latest-models")
+    fetch(`${import.meta.env.VITE_SERVER_API_URL}/latest-models`)
       .then((res) => res.json())
       .then((data) => {
         setLatestModels(data);

@@ -3,123 +3,104 @@
 @import "tailwindcss";
 
 @plugin "daisyui";
+
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
+  themes: light --default, dark;
 }
 
-/* Font setup */
+/* ১. প্রফেশনাল কালার ভেরিয়েবল */
+:root {
+  --primary-gradient: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); /* Indigo to Violet */
+  --font-poppins: "Poppins", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-main: #0B0F1A; /* Deep Space Blue - আরও প্রফেশনাল ডার্ক */
+  --card-bg: rgba(22, 27, 44, 0.7);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ২. গ্লোবাল সেটিংস */
 body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: var(--font-poppins);
+  @apply transition-colors duration-500;
 }
 
-/* Dark-aware text */
-@layer components {
-  .heading-text-dark-aware {
-    @apply text-gray-600 dark:text-gray-300;
-  }
+[data-theme="dark"] body {
+  background-color: var(--bg-main);
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(79, 70, 229, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.08) 0%, transparent 25%);
+  color: #F1F5F9;
 }
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* ৩. প্রিমিয়াম নেভবার (বামে লোগো, ডানে প্রোফাইল) */
+.menu li a {
+  @apply relative px-5 py-2.5 rounded-xl transition-all duration-300 font-medium;
+}
 
-/* ============================
-   BUTTON — Purple Neural AI
-============================ */
+.menu li a:hover {
+  background: rgba(79, 70, 229, 0.1) !important;
+  color: #818CF8 !important;
+}
+
+.menu li a.active {
+  @apply bg-transparent font-bold !important;
+  background-image: var(--primary-gradient) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.menu li a.active::after {
+  content: "";
+  @apply absolute bottom-1 left-1/2 -translate-x-1/2 w-5 h-1 rounded-full;
+  background: var(--primary-gradient);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+}
+
+/* ৪. বাটন - Glossy & Professional */
 .btn {
-  @apply text-white font-semibold py-2 px-4 rounded-lg transition duration-300 border-none;
-  background: linear-gradient(90deg, #6A00FF 0%, #9D4EDD 100%) !important;
+  @apply border-none rounded-xl px-8 py-2.5 font-bold text-white transition-all duration-500 shadow-lg relative overflow-hidden;
+  background: var(--primary-gradient) !important;
+}
+
+.btn::before {
+  content: "";
+  @apply absolute top-0 left-[-100%] w-full h-full skew-x-[-25deg] transition-all duration-700;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
-  filter: brightness(1.15);
-  transform: scale(1.05);
+  @apply -translate-y-1 brightness-110 shadow-[0_10px_25px_rgba(79,70,229,0.4)];
 }
 
-/* ============================
-   TOAST — Purple Neural
-============================ */
+/* ৫. কার্ড - Glassmorphism (ইনভেন্টরির জন্য সেরা) */
+.card-glass {
+  @apply backdrop-blur-xl border rounded-3xl transition-all duration-500 overflow-hidden;
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.card-glass:hover {
+  @apply -translate-y-2 border-indigo-500/30;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ৬. টোস্ট ও সুইট অ্যালার্ট */
 .center-toast {
-  position: fixed;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(90deg, #6A00FF 0%, #9D4EDD 100%);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 12px;
-  min-width: 250px;
-  text-align: center;
-  z-index: 9999;
-  box-shadow: 0 4px 12px rgba(106, 0, 255, 0.25);
-  font-weight: 500;
+  @apply fixed top-10 left-1/2 -translate-x-1/2 p-4 rounded-2xl backdrop-blur-2xl text-white font-semibold shadow-2xl z-[999] border border-white/10;
+  background: rgba(15, 23, 42, 0.9);
 }
 
-/* ============================
-   SWEET ALERT BUTTONS
-============================ */
-.swal-confirm-btn,
-.swal-cancel-btn {
-  background: linear-gradient(90deg, #6A00FF 0%, #9D4EDD 100%) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 8px !important;
-  padding: 8px 20px !important;
-  font-weight: 600 !important;
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-}
-
-.swal-confirm-btn:hover,
-.swal-cancel-btn:hover {
-  filter: brightness(1.2);
-  transform: scale(1.05);
-}
-
-/* ============================
-   NAV MENU LINKS
-============================ */
-.menu li a {
-  position: relative;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-}
-
-/* Hover */
-.menu li a:hover {
-  background: linear-gradient(90deg, #6A00FF 0%, #9D4EDD 100%);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(157, 78, 221, 0.4);
-  transform: translateY(-1px);
-}
-
-/* Active */
-.menu li a.active {
-  font-weight: 700;
-  background: none;
-  background-clip: text;
-  -webkit-background-clip: text;
-
-  background-image: linear-gradient(90deg, #6A00FF 0%, #9D4EDD 100%);
-  -webkit-text-fill-color: transparent;
-}
-
-/* Active icon */
-.menu li a.active svg {
-  color: #9D4EDD;
-}
-
-/* Active underline */
-.menu li a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -3px;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #6A00FF 0%, #9D4EDD 100%);
+/* ৭. ইউটিলিটি ক্লাস */
+@layer components {
+  .heading-gradient {
+    @apply bg-clip-text text-transparent font-black tracking-tight;
+    background-image: var(--primary-gradient);
+  }
 }

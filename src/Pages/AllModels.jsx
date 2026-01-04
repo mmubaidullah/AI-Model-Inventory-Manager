@@ -11,7 +11,7 @@ const AllModels = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://ai-model-inventory-manager-server-1.onrender.com/models")
+    fetch(`${import.meta.env.VITE_SERVER_API_URL}/models`)
       .then((res) => res.json())
       .then((data) => {
         setModels(data);
@@ -30,7 +30,7 @@ const AllModels = () => {
     const search_text = e.target.search.value;
 
     fetch(
-      `https://ai-model-inventory-manager-server-1.onrender.com/search?search=${search_text}&framework=${framework}`
+      `${import.meta.env.VITE_SERVER_API_URL}/search?search=${search_text}&framework=${framework}`
     )
       .then((res) => res.json())
       .then((data) => {

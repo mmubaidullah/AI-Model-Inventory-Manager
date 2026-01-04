@@ -25,7 +25,7 @@ const AddModel = () => {
       purchased: 0,
     };
 
-    fetch("https://ai-model-inventory-manager-server-1.onrender.com/models", {
+    fetch(`${import.meta.env.VITE_SERVER_API_URL}/models`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

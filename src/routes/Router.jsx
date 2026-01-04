@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home";
 import AddModel from "../Pages/AddModel";
@@ -11,6 +11,11 @@ import UpdateModel from "../Pages/UpdateModel";
 import MyModels from "../Pages/MyModels";
 import ModelPurchase from "../Pages/ModelPurchase";
 import ErrorPage from "../Pages/ErrorPage";
+import AboutUs from "../Pages/AboutUs";
+import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
+import DashboardOverview from "../layout/DashboardLayout/DashboardOverview";
+import Settings from "../layout/DashboardLayout/Settings";
+import ContactPage from "../Pages/ContactPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,39 +28,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/models",
-        Component: AllModels,
+        element: <AllModels />,
       },
       {
-        path: "/add-model",
-        element: (
-          <PrivateRoute>
-            <AddModel></AddModel>{" "}
-          </PrivateRoute>
-        ),
+        path: "/about-us",
+        element: <AboutUs />,
       },
       {
-        path: "/my-models",
-        element: (
-          <PrivateRoute>
-            <MyModels></MyModels>
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/model-purchase-page",
-        element: (
-          <PrivateRoute>
-            <ModelPurchase></ModelPurchase>
-          </PrivateRoute>
-        ),
+        path: "/contact",
+        element: <ContactPage />,
       },
       {
         path: "/model-details/:id",
-        element: (
-          <PrivateRoute>
-            <ModelDetails></ModelDetails>
-          </PrivateRoute>
-        ),
+        element: <ModelDetails />,
       },
       {
         path: "/update-model/:id",
@@ -68,16 +53,46 @@ export const router = createBrowserRouter([
 
       {
         path: "/register",
-        Component: Register,
+        element: <Register />,
       },
       {
         path: "/login",
-        Component: Login,
+        element: <Login />,
       },
     ],
   },
   {
     path: "*",
-    Component: ErrorPage,
+    element: <ErrorPage />,
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        element: <DashboardOverview />,
+      },
+      {
+        path: "add-model",
+        element: <AddModel />,
+      },
+      {
+        path: "my-models",
+        element: <MyModels />,
+      },
+      {
+        path: "model-purchase-page",
+        element: <ModelPurchase />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+      },
+    ],
   },
 ]);
